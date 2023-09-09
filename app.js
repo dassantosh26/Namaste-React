@@ -36,11 +36,14 @@ const heading = React.createElement(
 
 // To avoid this type of nesting we use jsx.
 
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 const heading = React.createElement(
   "div",
   { id: "parent" },
   React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I am H1 tag"),
+    React.createElement("h1", {}, "I am H1 tag from react using npm"),
     React.createElement("h2", {}, `I am h2 tag`),
   ])
 );
