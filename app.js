@@ -1,55 +1,16 @@
-//Using React
-
-/* const heading = React.createElement(
-  "h1",
-  { id: "heading", xyz: "abc" },
-  "Hello World From React"
-); */
-
-//Nested Html using react
-
-// <div id="parent">
-//     <div id="child">
-//         <h1>I am h1 tag</h1>
-//     </div>
-// </div>
-
-//If we add sibilling in children then we we have to put it into array format
-
-// <div id="parent">
-//     <div id="child">
-//         <h1>I am h1 tag</h1>
-//         <h2>I am h2 tag</h2>
-//     </div>
-// </div>
-
-/* 
-const heading = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement(
-    "div",
-    { id: "child" },
-    React.createElement("h1", {}, "I am H1 tag")
-  )
-); */
-
-// To avoid this type of nesting we use jsx.
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const heading = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I am H1 tag from react using npm"),
-    React.createElement("h2", {}, `I am h2 tag`),
-  ])
+const Title = () => <h1 id="heading">Namaste React Using JSX</h1>;
+
+//Functional component
+
+const HeadingComponent = () => (
+  <div id="container">
+    <Title />
+    <h1>Namaste React Functional Component</h1>;
+  </div>
 );
 
-console.log(heading);
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(heading);
+root.render(<HeadingComponent />);
