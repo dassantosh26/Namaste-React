@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+.logo {
+  width: 135px;
+  cursor: pointer;
+}
+.nav-items ul {
+  display: flex;
+}
+.nav-items {
+  padding: 0 30px;
+  font-size: 18px;
+}
+.nav-items ul li {
+  padding: 10px;
+  margin: 10px;
+  list-style: none;
+  cursor: pointer;
+}
+.restro-card {
+  width: 200px;
+  padding: 5px;
+}
+.restro-card:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+.card-img {
+  width: 100%;
+}
+.search {
+  padding: 10px;
+}
+.restro-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
