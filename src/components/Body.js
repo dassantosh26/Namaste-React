@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ResturantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 
@@ -22,11 +23,11 @@ const Body = () => {
     // );
 
     setListOfRestaurant(
-      response?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+      response?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
     setFilteredRestaurant(
-      response?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+      response?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   };
@@ -64,7 +65,7 @@ const Body = () => {
             const filterdList = listOfRestaurant.filter(
               (res) => res?.info?.avgRating >= 4.3
             );
-            console.log(filterdList);
+            // console.log(filterdList);
             setFilteredRestaurant(filterdList);
           }}
         >
@@ -73,7 +74,12 @@ const Body = () => {
       </div>
       <div className="restro-container">
         {filteredRestaurant.map((restaurant) => (
-          <ResturantCard key={restaurant?.info?.id} restroData={restaurant} />
+          <Link
+            key={restaurant.info?.id}
+            to={"/restaurant/" + restaurant.info?.id}
+          >
+            <ResturantCard restroData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
