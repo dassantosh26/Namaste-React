@@ -18,19 +18,20 @@ const Body = () => {
     );
     const response = await data.json();
     // console.log(
-    //   response?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+    //   response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
     //     ?.restaurants
     // );
 
     setListOfRestaurant(
-      response?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
     setFilteredRestaurant(
-      response?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   };
+  // console.log(listOfRestaurant);
 
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
