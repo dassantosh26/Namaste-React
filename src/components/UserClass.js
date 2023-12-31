@@ -14,7 +14,7 @@ class UserClass extends React.Component {
   }
   async componentDidMount() {
     // console.log(this.props.name + "Child Component Did Mount");
-    const data = await fetch("https://api.github.com/users/akshaymarch7");
+    const data = await fetch("https://api.github.com/users/dassantosh26");
     const res = await data.json();
 
     this.setState({
@@ -32,11 +32,11 @@ class UserClass extends React.Component {
     // console.log(this.props.name + "Child Rendered Called");
     const { name, location, avatar_url } = this.state.userInfo;
     return (
-      <div className="user-card">
-        <img src={avatar_url} />
-        <h2>Name:{name}</h2>
-        <h3>Location:{location}</h3>
-        <h4>Contact:@santosh26</h4>
+      <div className="m-4 p-4">
+        <img src={avatar_url} className="mb-3"/>
+        <h2 className="mb-3">Name:{name}</h2>
+        <h3 className="mb-3">Location:{location}</h3>
+        <h4 className="mb-3">Contact:@santosh26</h4>
       </div>
     );
   }
