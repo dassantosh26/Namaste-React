@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import ResturantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
@@ -18,16 +19,16 @@ const Body = () => {
     );
     const response = await data.json();
     // console.log(
-    //   response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+    //   response?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
     //     ?.restaurants
     // );
 
     setListOfRestaurant(
-      response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      response?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
     setFilteredRestaurant(
-      response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      response?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   };
@@ -40,7 +41,7 @@ const Body = () => {
         Looks like you're Offline !!! Please check your internet connection.
       </h1>
     );
-
+  const { loggedInUser, setUserName } = useContext(UserContext);
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
   ) : (
@@ -82,6 +83,15 @@ const Body = () => {
           >
             Top Rated Resturant
           </button>
+        </div>
+        <div className="m-4 p-4 flex items-center">
+          <label className="px-2">User name: </label>
+          <input
+            type="text"
+            className="border border-black p-1"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
         </div>
       </div>
       <div className="flex flex-wrap px-4">
