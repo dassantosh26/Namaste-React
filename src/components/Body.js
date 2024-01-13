@@ -24,11 +24,11 @@ const Body = () => {
     // );
 
     setListOfRestaurant(
-      response?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+      response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
     setFilteredRestaurant(
-      response?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+      response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   };
